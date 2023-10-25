@@ -1,0 +1,6 @@
+File: DirectoryTxt.class(Last modified: Tue Oct 24 10:53:28 CEST 2023)
+File: DirectoryTxt.java(Last modified: Tue Oct 24 10:18:56 CEST 2023)
+File: Main.class(Last modified: Tue Oct 24 10:53:28 CEST 2023)
+File: Main.java(Last modified: Tue Oct 24 10:33:04 CEST 2023)
+File: output.txt(Last modified: Wed Oct 25 12:44:54 CEST 2023)
+File: README_s105n1ex3.txt(Last modified: Tue Oct 24 13:35:18 CEST 2023)
