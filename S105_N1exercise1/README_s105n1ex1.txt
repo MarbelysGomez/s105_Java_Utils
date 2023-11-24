@@ -1,20 +1,29 @@
-What you need.
-You need to hava a Java JDK installed on your computer to run this program.
+Prerequisites:
+Ensure that the Java Development Kit (JDK) is properly installed and configured on your computer to execute this program.
 
-How to Run the program.
-1. Open the command prompt or terminal.
+Running the Program:
 
-2. Use the cd command to go to the project's folder: 
-cd D:\IdeaProjects\s1_Java_Language\
+1. Open a command prompt or terminal on your computer.
 
-3. Now we need to prepare the Java files for running. (Make sure to include the package name when specifying the file paths). 
+2. Clone the Repository:
+   Use the cd command to navigate to the directory where you wish to store the repository. Then clone the repository from GitHub:
 
-Type this command and press Enter: 
-javac src\main\java\s105_Java_Utils\S105_N1exercise1\DirectoryLister.java src\main\java\s105_Java_Utils\S105_N1exercise1\Main.java
+git clone https://github.com/MarbelysGomez/s105_Java_Utils.git
 
-4. Finally, we can run the program. (Make sure to include the package name when specifying the file paths). 
+This command will create a directory named s105_Java_Utils containing the cloned repository.
 
-Type this command and press Enter: 
-java -cp src\main\java\ s105_Java_Utils.S105_N1exercise1.Main
+3. Compilation:
+Compile the Java files using the javac command. Ensure to include the package name when specifying file paths:
 
-This command runs the Main class from the s105_Java_Utils.S105_N1exercise1 package.
+javac s105_Java_Utils\S105_N1exercise1\DirectoryLister.java s105_Java_Utils\S105_N1exercise1\Main.java
+
+4. Running the Program:
+After successful compilation, execute the program using the java command. Be sure to include the package name when specifying file paths:
+
+java -cp . s105_Java_Utils.S105_N1exercise1.Main
+
+These steps will compile and execute the Java program within the s105_Java_Utils directory cloned from the GitHub repository. Adjust the paths accordingly based on your specific environment.
+
+
+
+

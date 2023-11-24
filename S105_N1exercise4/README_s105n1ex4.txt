@@ -1,20 +1,14 @@
-What you need.
-You need to hava a Java JDK installed on your computer to run this program.
+Prerequisites:
+Ensure that the Java Development Kit (JDK) is properly installed and configured on your computer to execute this program.
 
-How to Run the program.
+Running the Program:
 
-1. Open the command prompt or terminal.
+1. Open a command prompt or terminal on your computer.
 
-2. Use the cd command to go to the project's folder: 
-cd D:\IdeaProjects\s1_Java_Language
+2. Use the cd command to navigate to the directory where you stored the cloned repository (s105_Java_Utils).
 
-3. Compile the Java files using the javac command. (Make sure to include the package name when specifying the file paths). 
-Type this command and press Enter: 
- src\main\java\s105_Java_Utils\S105_N1exercise4\ReaderText.java src\main\java\s105_Java_Utils\S105_N1exercise4\Main.java
+3. Execute the program using the "type" command. Be sure to include the package name when specifying file paths:
 
-4. Once the compilation is successful, you can run the program using the java command.(Make sure to include the package name when specifying the file paths). 
+type s105_Java_Utils\S105_N1exercise4\ReaderTxtFile.txt
 
-Type this command and press Enter: 
-java -cp target/classes s105_Java_Utils.S105_N1exercise4.Main
-
-This command runs the Main class from the s105_Java_Utils.S105_N1exercise2 package.
+These steps will compile and execute the Java program within the s105_Java_Utils directory. Adjust the paths accordingly based on your specific environment.

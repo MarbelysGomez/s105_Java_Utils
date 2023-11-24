@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-        String filePath = "D:\\IdeaProjects\\s1_Java_Language\\src\\main\\java\\s105_Java_Utils\\S105_N1exercise4\\ReaderTxtFile.txt";
+        String filePath = "D:\\IdeaProjects\\s1_Java_Language\\src\\main\\java\\s105_Java_Utils\\S105_N1exercise4\\README_s105n1ex5.txt";
 
         try (FileOutputStream fileOut = new FileOutputStream("Object.ser");
              ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
