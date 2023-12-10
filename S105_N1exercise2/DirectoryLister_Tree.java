@@ -2,45 +2,31 @@ package s105_Java_Utils.S105_N1exercise2;
 
 import java.io.File;
 import java.util.Arrays;
-public class DirectoryLister_Tree {
-    private String dirName;
-    public DirectoryLister_Tree(String dirName) {
-        this.dirName = dirName;
-    }
-    public void listDirectory() {
-        File directory = new File(dirName);
+import java.util.Comparator;
+import java.util.Date;
 
-        if (directory.isDirectory()) {
-            listContents(directory, 0);
-        } else {
-            System.out.println("Invalid directory.");
-        }
+public class DirectoryLister_Tree {
+    public DirectoryLister_Tree() {
     }
-    private void listContents(File directory, int level) {
+    public void listDirectory(File directory, int level) {
         File[] fileList = directory.listFiles();
 
-        if(fileList != null) {
-            Arrays.sort(fileList);
+        if (fileList != null) {
+            Arrays.sort((fileList), Comparator.comparing(File::getName));
 
             for (File file : fileList) {
-                printFileInfo(file, level);
-
-                if(file.isDirectory()) {
-                    listContents(file, level + 1);
+                for(int i= 0; i < level; i++) {
+                    System.out.print("\t");
+                }
+                if (file.isDirectory()) {
+                    System.out.println("D " + file.getName() + " (Last modified: " + new Date(file.lastModified()) + ")");
+                    listDirectory(file,level + 1);
+                } else{
+                    System.out.println("F " + file.getName() + "(Last modified: " + new Date(file.lastModified()) + ")");
                 }
             }
+        } else {
+            System.out.println("Unable to access directory.");
         }
-    }
-    private void printFileInfo(File file, int level) {
-        StringBuilder indent = new StringBuilder();
-        for (int i = 0; i < level; i++) {
-                indent.append(" ");
-        }
-        String type = file.isDirectory() ? "D" : "F";
-        String name = file.getName();
-        String lastModified = new java.util.Date(file.lastModified()).toString();
-
-        System.out.println(indent + "File: " + name + "(Last modified: " + lastModified + ")");
     }
 }
-

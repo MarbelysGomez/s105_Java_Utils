@@ -1,3 +1,5 @@
+Parameterizing the directory to read and the name and directory:
+
 File: DirectoryTxt.class(Last modified: Tue Oct 24 10:53:28 CEST 2023)
 File: DirectoryTxt.java(Last modified: Tue Oct 24 10:18:56 CEST 2023)
 File: Main.class(Last modified: Tue Oct 24 10:53:28 CEST 2023)

@@ -16,7 +16,7 @@ public class DirectoryLister {
             File[] fileList = directory.listFiles();
 
             if (fileList != null) {
-                Arrays.sort((fileList));
+                Arrays.sort(fileList);
 
                 for (File file : fileList) {
                     System.out.println(file.getName());

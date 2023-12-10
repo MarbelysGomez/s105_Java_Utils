@@ -4,24 +4,27 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-        String filePath = "D:\\IdeaProjects\\s1_Java_Language\\src\\main\\java\\s105_Java_Utils\\S105_N1exercise4\\README_s105n1ex5.txt";
 
-        try (FileOutputStream fileOut = new FileOutputStream("Object.ser");
-             ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
-            SerializedClass serializedClass = new SerializedClass(filePath);
-            out.writeObject(serializedClass);
-            System.out.println("Object serialized successfully.");
-        } catch (IOException e) {
-            System.out.println("Error serializing object: " + e.getMessage());
-            e.printStackTrace();
-        }
-        try (FileInputStream fileInput =  new FileInputStream("Object.ser");
-             ObjectInputStream in = new ObjectInputStream(fileInput)) {
-            SerializedClass serializedClass = (SerializedClass) in.readObject();
-            System.out.println("Objecto deserialized successfully.");
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Error deserializing object: " + e.getMessage());
-            e.printStackTrace();
+        if (args.length > 0) {
+            String fileName = args[0];
+            try {
+                FileWriter fileWriter = new FileWriter("output.txt");
+                SerializedClass serializedClass = new SerializedClass();
+                serializedClass.listDirectory(new File(fileName), 0, fileWriter);
+                fileWriter.close();
+
+                serializedClass.displayFileContents(fileName);
+
+                serializedClass.serializeObject(serializedClass, "serializedObject.ser");
+
+                SerializedClass deserializedObject = serializedClass.deserializationObject("serializedObject.ser");
+
+                System.out.println("Deserialized object is an instance of " + deserializedObject.getClass().getName());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("Please provide a directory name as an argument.");
         }
     }
 }

@@ -1,31 +1,48 @@
 package s105_Java_Utils.S105_N1exercise4;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Date;
 
 public class ReaderText {
-    private String filePath;
 
-    public ReaderText (String filePath) {
-        this.filePath = filePath;
+    public ReaderText () {
     }
-    public void readFile () {
-        File file = new File(filePath);
+    public void listDirectory(File directory, int level, FileWriter writer) throws IOException {
+        File[] fileList = directory.listFiles();
 
-        if(file.isFile()) {
-            try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
-                String line;
-                while ((line = bufferedReader.readLine()) != null){
-                    System.out.println(line);
+        if (fileList != null) {
+            Arrays.sort((fileList), Comparator.comparing(File::getName));
+
+            for (File file : fileList) {
+                for (int i = 0; i < level; i++) {
+                    writer.write("\t");
                 }
-            } catch (IOException e){
-                System.out.println("Error reading file: " + e.getMessage());
-                e.printStackTrace();
+                if (file.isDirectory()) {
+                    writer.write("D " + file.getName() + " (Last modified: " + new Date(file.lastModified()) + ")");
+                    listDirectory(file, level + 1, writer);
+                } else {
+                    writer.write("F " + file.getName() + "(Last modified: " + new Date(file.lastModified()) + ")");
+                }
             }
         } else {
-            System.out.println("Invalid file path.");
+            writer.write("Invalid directory.");
+        }
+    }
+    public void displayFileContents(String fileName) {
+        try {
+           File file = new File(fileName);
+            FileReader fileReader = new FileReader(file);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -1,11 +1,17 @@
 package s105_Java_Utils.S105_N1exercise2;
 
+import java.io.File;
+
 public class Main {
     public static void main(String[] args) {
-        String dirName = "D:\\IdeaProjects\\s1_Java_Language\\src\\main\\java\\s105_Java_Utils\\S105_N1exercise2";
 
-        DirectoryLister_Tree directoryLister = new DirectoryLister_Tree(dirName);
-        directoryLister.listDirectory();
+        if (args.length > 0) {
+            String dirName = args[0];
+            DirectoryLister_Tree directoryLister_Tree = new DirectoryLister_Tree();
+            directoryLister_Tree.listDirectory(new File(dirName), 0);
+        } else {
+            System.out.println("Please provide a directory name as an argument.");
+        }
     }
 }
 
