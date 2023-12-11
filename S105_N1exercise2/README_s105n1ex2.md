@@ -18,7 +18,9 @@ javac s105_Java_Utils\S105_N1exercise2\DirectoryLister_Tree.java s105_Java_Utils
 After successful compilation, execute the program using the java command. Be sure to include the package name when specifying file paths:
 
 ```sh
-java -cp . s105_Java_Utils.S105_N1exercise2.Main
+java -cp . s105_Java_Utils.S105_N1exercise2.Main "directory_name"
 ```
+
+Replace directory_name with the actual path of the directory you want to list.
 
 These steps will compile and execute the Java program within the s105_Java_Utils directory. Adjust the paths accordingly based on your specific environment.

@@ -8,8 +8,7 @@ public class Main {
 
         if (args.length > 0) {
             String dirName = args[0];
-            try {
-                FileWriter fileWriter = new FileWriter("output.txt");
+            try (FileWriter fileWriter = new FileWriter("output.txt")) {
                 DirectoryTxt directoryTxt = new DirectoryTxt(fileWriter);
                 directoryTxt.listDirectory(new File(dirName), 0);
             } catch (Exception e) {

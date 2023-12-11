@@ -17,8 +17,10 @@ javac s105_Java_Utils\S105_N1exercise5\SerializedClass.java s105_Java_Utils\S105
 4. Running the Program:
 After successful compilation, execute the program using the java command. Be sure to include the package name when specifying file paths:
 
-```sh
-java -cp . s105_Java_Utils.S105_N1exercise5.Main
-```
+
+java -cp . s105_Java_Utils.S105_N1exercise5.Main "directory_name"
+
+Replace directory_name with the actual path of the directory you want to list.
+
 
 These steps will compile and execute the Java program within the s105_Java_Utils directory. Adjust the paths accordingly based on your specific environment.

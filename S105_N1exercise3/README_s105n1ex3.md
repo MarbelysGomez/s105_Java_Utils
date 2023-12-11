@@ -17,9 +17,16 @@ javac s105_Java_Utils\S105_N1exercise3\DirectoryTxt.java s105_Java_Utils\S105_N1
 4. Running the Program:
 After successful compilation, execute the program using the java command. Be sure to include the package name when specifying file paths:
 
+java -cp . s105_Java_Utils.S105_N1exercise3.Main "directory_name"
+
+Replace directory_name with the actual path of the directory you want to list.
+
+5. Viewing the content of output.txt:
+
 ```sh
-java -cp . s105_Java_Utils.S105_N1exercise3.Main > output.txt
+type output.txt
 ```
+
 
 These steps will compile and execute the Java program within the s105_Java_Utils directory. Adjust the paths accordingly based on your specific environment.
 
